@@ -5,11 +5,13 @@ import './app/layout/styles.css';
 
 import reportWebVitals from './reportWebVitals';
 import App from './app/layout/App';
+import { store, StoreContext } from './app/stores/store';
 
 ReactDOM.render(
- 
-    <App />,
- 
+
+  <StoreContext.Provider value={store}>
+      <App />
+  </StoreContext.Provider>,
   document.getElementById('root')
 );
 
