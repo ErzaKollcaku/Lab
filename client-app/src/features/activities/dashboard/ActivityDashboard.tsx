@@ -20,7 +20,7 @@ useEffect(() => {
     if(activityRegistry.size <=1 ) loadActivities();
 }, [activityRegistry.size,loadActivities])
 
-if (activityStore.loadingInitial) return <LoadingComonent content='Loading app' />
+if (activityStore.loadingInitial) return <LoadingComonent content='Loading activities...' />
     return(
         <Grid>
             <Grid.Column width='10'>
