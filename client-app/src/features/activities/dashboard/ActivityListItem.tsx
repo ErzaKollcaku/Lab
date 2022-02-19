@@ -26,7 +26,7 @@ export default function ActivityListItem({activity}: Props){
                                 {activity.title}
                                  </Item.Header>
 
-                                 <Item.Description>Hosted by bob</Item.Description>
+                                 
                         </Item.Content>
 
                       </Item>
@@ -40,9 +40,7 @@ export default function ActivityListItem({activity}: Props){
                       <Icon name='marker' /> {activity.venue}
                   </span>
               </Segment>
-                 <Segment secondary>
-                      Attendes go here
-                    </Segment> 
+                
 
                     <Segment clearing>
 
@@ -52,7 +50,7 @@ export default function ActivityListItem({activity}: Props){
                         <Button
                            as = {Link}
                            to = {`/activities/${activity.id}`}
-                           color="teal"
+                           color="red"
                            floated="right" 
                            content ='View'
                         

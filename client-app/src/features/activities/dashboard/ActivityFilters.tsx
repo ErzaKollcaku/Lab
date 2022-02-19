@@ -10,10 +10,15 @@ export default function ActivityFilters (){
 
         <>
         <Menu vertical size='large' style={{width:'100%' , marginTop:25}}>
-          <Header  icon='filter'  attached color='teal' content='Filters'/>
+          <Header  icon='filter'  attached color='red' content='Activites'/>
           <Menu.Item  content='All Activites'/>
-          <Menu.Item  content='I am going'/>
-          <Menu.Item  content='I am hosting'/>
+          <Menu.Item  content='I am traveling'/>
+          <Menu.Item  content='I am wachting'/>
+          <Menu.Item  content='I am drinking'/>
+          <Menu.Item  content='I am wachting'/>
+          <Menu.Item  content='..'/>
+          
+
         </Menu>
         <Header/>
          <Calendar />

@@ -9,21 +9,21 @@ export default observer(function ActivityDetailedChat() {
                 textAlign='center'
                 attached='top'
                 inverted
-                color='teal'
+                color='red'
                 style={{border: 'none'}}
             >
-                <Header>Chat about this event</Header>
+                <Header>Chat about this activities</Header>
             </Segment>
             <Segment attached>
                 <Comment.Group>
                     <Comment>
                         <Comment.Avatar src='/assets/user.png'/>
                         <Comment.Content>
-                            <Comment.Author as='a'>Matt</Comment.Author>
+                            <Comment.Author as='a'>Erza</Comment.Author>
                             <Comment.Metadata>
                                 <div>Today at 5:42PM</div>
                             </Comment.Metadata>
-                            <Comment.Text>How artistic!</Comment.Text>
+                            <Comment.Text>Nice! </Comment.Text>
                             <Comment.Actions>
                                 <Comment.Action>Reply</Comment.Action>
                             </Comment.Actions>
@@ -33,11 +33,11 @@ export default observer(function ActivityDetailedChat() {
                     <Comment>
                         <Comment.Avatar src='/assets/user.png'/>
                         <Comment.Content>
-                            <Comment.Author as='a'>Joe Henderson</Comment.Author>
+                            <Comment.Author as='a'>Gresa</Comment.Author>
                             <Comment.Metadata>
                                 <div>5 days ago</div>
                             </Comment.Metadata>
-                            <Comment.Text>Dude, this is awesome. Thanks so much</Comment.Text>
+                            <Comment.Text>Dude, this is awesome.</Comment.Text>
                             <Comment.Actions>
                                 <Comment.Action>Reply</Comment.Action>
                             </Comment.Actions>
@@ -50,7 +50,7 @@ export default observer(function ActivityDetailedChat() {
                             content='Add Reply'
                             labelPosition='left'
                             icon='edit'
-                            primary
+                           
                         />
                     </Form>
                 </Comment.Group>

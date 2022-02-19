@@ -19,8 +19,17 @@ import { Activity } from '../../../app/models/activity';
 export default observer(function ActivityForm() {
     const history = useHistory();
     const { activityStore } = useStore();
-    const {  createActivity, updateActivity, loading , loadActivity,loadingInitial }= activityStore;
+    const {  createActivity, updateActivity, loading , loadActivity,deleteActivity,loadingInitial }= activityStore;
     const {id} = useParams<{id: string}>();
+
+ 
+    
+  
+  
+  
+    useEffect(() => {
+      if(id) loadActivity(id);
+    },[id, loadActivity]);
 
 
 
@@ -61,14 +70,18 @@ export default observer(function ActivityForm() {
        }else {
         updateActivity(activity).then(()=>history.push(`/activities/${activity.id}`))
        }
-    }
 
-  
+        
+       
+    }
+     function timeout(delay: number) {
+        return new Promise( res => setTimeout(res, delay) );
+    }
   
     if(loadingInitial) return <LoadingComonent content='Loading activity...'/>
     return (
         <Segment clearing>
-           <Header content='Activity Details' sub color='teal' />
+           <Header content='Activity Details' sub color='green' />
            <Formik 
            validationSchema={validationSchema}
            enableReinitialize
@@ -76,7 +89,7 @@ export default observer(function ActivityForm() {
              onSubmit={values =>handleFormSubmit(values)} >
             {({handleSubmit , isValid ,isSubmitting , dirty}) =>(
                <Form className='ui form' onSubmit={handleSubmit} autoComplete='off' >
-               <MyTextInput name='title'  placeholder='Title'/>
+               <MyTextInput name='title'  placeholder='Name'/>
               
                <MyTextArea rows={3} placeholder='Description'  name='description' />
                <MySelectInput options={categoryOptions} placeholder='Category'  name='category'  />
@@ -85,15 +98,18 @@ export default observer(function ActivityForm() {
                timeCaption='time'
                dateFormat='MMM d , yyy h:mm aa'
                 placeholderText='Date'  name='date'  />
-           <Header content=' Location Details' sub color='teal' />
+           <Header content=' Location Details' sub color='green' />
                <MyTextInput placeholder='City'  name='city'  />
                <MyTextInput placeholder='Venue'  name='venue' />
                <Button 
                disabled = {isSubmitting || !dirty ||  !isValid}
                loading={loading} floated='right' positive type='submit' content='Submit' />
                <Button as={Link} to='/activities' floated='right' type='button' content='Cancel' />
+               <Button onClick={(event)=>deleteActivity(event,activity.id)}  as={Link} to='/activities' onSubmit={timeout(10000)} floated='right' type='button' content='Delete' />
            </Form>
             )} 
+             
+            
            </Formik>
            
         </Segment>

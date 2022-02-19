@@ -12,16 +12,16 @@ export default observer(function ActivityDetailedSidebar () {
                 attached='top'
                 secondary
                 inverted
-                color='teal'
+                
             >
-                3 People Going
+                3 People watching
             </Segment>
             <Segment attached>
                 <List relaxed divided>
                     <Item style={{ position: 'relative' }}>
                         <Label
                             style={{ position: 'absolute' }}
-                            color='orange'
+                            color='red'
                             ribbon='right'
                         >
                             Host
@@ -29,9 +29,9 @@ export default observer(function ActivityDetailedSidebar () {
                         <Image size='tiny' src={'/assets/user.png'} />
                         <Item.Content verticalAlign='middle'>
                             <Item.Header as='h3'>
-                                <Link to={`#`}>Bob</Link>
+                                <Link to={`#`}>Yllka</Link>
                             </Item.Header>
-                            <Item.Extra style={{ color: 'orange' }}>Following</Item.Extra>
+                            <Item.Extra style={{ color: 'red' }}>Following</Item.Extra>
                         </Item.Content>
                     </Item>
 
@@ -39,9 +39,9 @@ export default observer(function ActivityDetailedSidebar () {
                         <Image size='tiny' src={'/assets/user.png'} />
                         <Item.Content verticalAlign='middle'>
                             <Item.Header as='h3'>
-                                <Link to={`#`}>Tom</Link>
+                                <Link to={`#`}>Fjolla</Link>
                             </Item.Header>
-                            <Item.Extra style={{ color: 'orange' }}>Following</Item.Extra>
+                            <Item.Extra style={{ color: 'red' }}>Following</Item.Extra>
                         </Item.Content>
                     </Item>
 

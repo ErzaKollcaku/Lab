@@ -2,6 +2,7 @@ import {  makeAutoObservable, runInAction} from "mobx";
 import agent from "../api/agent";
 import { Activity } from "../models/activity";
 import { format } from "date-fns";
+import { SyntheticEvent } from "react";
 
 
 export default class ActivityStore{
@@ -121,7 +122,8 @@ loadingInitial = false;
         }
     }
 
-    deleteActivity = async (id: string) =>{
+    deleteActivity = async (event: SyntheticEvent<HTMLButtonElement>,id: string) =>{
+        
         this.loading = true;
         try{    
             await agent.Activities.delete(id);
