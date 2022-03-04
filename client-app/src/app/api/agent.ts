@@ -4,6 +4,8 @@ import { history } from '../..';
 import { Activity } from '../models/activity';
 import { User, UserFormValues } from '../models/user';
 import { store } from '../stores/store';
+import { Works } from '../models/works';
+
 
 const sleep = (delay: number) => {
     return new Promise((resolve) => {
@@ -75,6 +77,13 @@ const Activities ={
     update: (activity: Activity) => requests.put<void>(`/activities/${activity.id}` , activity),
     delete: (id: string) => requests.delete<void>(`/activities/${id}`)
 }
+const Workies ={
+    list: () => requests.get<Works[]>('/workies'),
+    details: (id: string) => requests.get<Works>(`/workies/${id}`),
+    create: (works: Works) => requests.post<void>('/workies',works),
+    update: (works: Works) => requests.put<void>(`/workies/${works.id}` , works),
+    delete: (id: string) => requests.delete<void>(`/workies/${id}`)
+}
 const Account = {
     current : () => requests.get<User>('/account'),
     login:(user : UserFormValues) => requests.post<User>('/account/login', user),
@@ -83,6 +92,7 @@ const Account = {
 
 const agent = {
     Activities,
+    Workies,
     Account
 }
 export default agent;
